@@ -1,0 +1,441 @@
+<!-- Author: Prashant Agheda -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Style for Favicon of Website -->
+    <link rel="icon" href="./resources/favicon.ico" type="image/x-icon" />
+
+    <title> Prashant Agheda's Portfolio </title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .bi {
+            font-size: 30px;
+        }
+
+        a {
+            color: blue;
+            transition: 0.3s ease;
+            text-decoration: none;
+        }
+
+        a:hover, .bi:hover {
+            color: red;
+            transition: 0.3s ease;
+        }
+
+        h1, h3 {
+            font-weight: bold;
+        }
+    </style>
+  </head>
+  <body>
+
+    <div class="container my-5" id="home">
+        <h1> Prashant Agheda 😄</h1>
+        <br/>
+        <p class="lead mt-2">
+            I am a Student and Programmer who Enjoys Software Development, Data Science and UI UX, Graphic Designing.
+        </p>
+        <hr/>
+    </div>
+
+    <div class="container">
+        <nav>
+            <ul class="nav nav-pills" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a href="#" class="nav-link active">Home</a>
+                </li>
+    
+                <li class="nav-item" role="presentation">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <a href="#about-me" class="nav-link">About Me</a>
+                </li>
+    
+                <li class="nav-item" role="presentation">
+                    <a href="#education" class="nav-link">Education</a>
+                </li>
+    
+				<li class="nav-item" role="presentation">
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                </li>
+    
+                <li class="nav-item" role="presentation">
+                    <a href="#social-media" class="nav-link">Social Media</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <h3 class="mb-3">Experience</h3>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="mx-3">
+                            <img src="./resources/vibrantminds-logo.PNG" alt="VibrantMinds Technologies Logo" class="img-fluid mb-4" width="200">
+                            <h4>VibrantMinds Technologies Pvt. Ltd.</h4>
+                            <div><strong>July 2020 - October 2020</strong></div>
+                        </div>
+                        <ul class="list-group list-group-flush mt-4">
+                            <li class="list-group-item">
+                                Worked  as a Team Leader for one team and handled the Website Designing
+                                and Development part of the section assigned to our team.
+                            </li>
+                            <li class="list-group-item">
+                                Created the Homepage of the Section assigned to us and many other pages.
+                            </li>
+                            <li class="list-group-item">
+                                <b>Skills Learnt:</b>
+                                <ul>
+                                    <li>Team Handling</li>
+                                    <li>Web Development</li>
+                                    <li>Basic Graphic Designing</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                View My Internship Certificate by <a href="./resources/VibrantMinds Internship Certificate.jpg" target="_parent">Clicking Here</a>.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <h3 class="mb-3">Skills</h3>
+                
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="mx-3">
+                            <h4>Languages</h4>
+                            <br/>
+                            <ul>
+                                <li>HTML, CSS</li>
+                                <li>JavaScript</li>
+                                <li>jQuery</li>
+                                <li>AJAX</li>
+                                <li>PHP</li>
+                                <li>Python</li>
+                                <li>Bootstrap</li>
+                                <li>SQL</li>
+                                <li>Flutter and Dart (Basics)</li>
+                            </ul>
+
+                            <br/>
+
+                            <h4>Tools</h4>
+                            <br/>
+                            <ul>
+                                <li>Google Colaboratory</li>
+                                <li>Jupyter Notebook</li>
+                                <li>Figma</li>
+                                <li>Canva</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5" id="projects">
+        <h3 class="mb-3">Previous Projects</h3>
+        <div class="row">
+            <!-- Project 1 -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card mb-3">
+                    <img src="./resources/cureme-logo.PNG" alt="CureMe - Health Advice App" class="card-img-top p-5">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">
+                            CureMe - Health Advice App
+                        </h5>
+                        <p class="card-text">
+                            An App that is "Useful" and Helps people to Book Appointments with
+                            Doctors, Chat with them and Read blogs written by them.
+                        </p>
+                        <a href="https://cureme-health-advice-app.web.app/" target="_parent" class="btn btn-primary w-100">
+                            View App
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card mb-3">
+                    <img src="./resources/covid-relief-logo.png" alt="Covid Relief Website" class="card-img-top p-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">
+                            Covid Relief Website
+                        </h5>
+                        <p class="card-text">
+                            A Website that is "Useful" for people in this tough situation
+                            of Covid-19. The data used in Website is imaginary but the
+                            idea is Real.
+                        </p>
+                        <a href="https://my-covid-relief-website.web.app/" target="_parent" class="btn btn-primary w-100">
+                            View Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card mb-3">
+                    <img src="./resources/ui-color-tool-logo.PNG" alt="UI Color Picker Mini Project" class="card-img-top pt-5 mb-5">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">
+                            UI Color Picker Mini Project
+                        </h5>
+                        <p class="card-text">
+                            A UI Color Picker that lets you choose colors for your Project.
+                            You can click on the color and see the changes on the device
+                            that is on the RHS.
+                        </p>
+                        <a href="https://ui-color-picker-tool.web.app/" target="_parent" class="btn btn-primary w-100">
+                            View Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 for Hackathon -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card mb-3">
+                    <img src="./resources/gif-finder-logo.png" alt="GIF Finder Project made during Hackathon" class="card-img-top pt-5 mb-5">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">
+                            GIF Finder Mini Project
+                        </h5>
+                        <p class="card-text">
+                            A Simple website that helps users to find GIFs according to the keyword entered by them.
+                        </p>
+                        <a href="https://gif-finder-free.web.app/" target="_parent" class="btn btn-primary w-100">
+                            View Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 for Hackathon -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card mb-3">
+                    <img src="./resources/wikipedia-search-logo.jpg" alt="Wikipedia Search Project made during Hackathon" class="card-img-top pt-5 mb-5">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">
+                            Wikipedia Search Mini Project
+                        </h5>
+                        <p class="card-text">
+                            A Simple website that helps users to find the information related to a particular keyword.
+                            for example, if you type Artificial Intelligence, then it will show you the links from Wikipedia.
+                        </p>
+                        <a href="https://easy-wikipedia-search.web.app/" target="_parent" class="btn btn-primary w-100">
+                            View Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 - Mini Project done during MCA Semester 2 -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card mb-3">
+                    <img src="./resources/simple-whiteboard-logo.png" alt="Simple Whiteboard to Brainstorm Ideas" class="card-img-top pt-5 mb-5">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">
+                            Simple Whiteboard App
+                        </h5>
+                        <p class="card-text">
+                            A Simple website that helps users to Brainstorm their Ideas. The User can draw on the Canvas
+                            and also can change the properties like Pen Size, Eraser Size, Download their Board, etc.
+                        </p>
+                        <a href="https://whiteboard-your-ideas.web.app" target="_parent" class="btn btn-primary w-100">
+                            View Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5" id="about-me">
+        <div class="row">
+            <div class="col">
+                <h3 class="mb-3">About Me</h3>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="mx-3">
+                            <div><strong>Here are some of the points about me:</strong></div>
+                        </div>
+                        <ul class="list-group list-group-flush mt-2">
+                            <li class="list-group-item list-group-item-action">
+                                I am a BCA Graduate and have Interests in learning new Technologies.
+                            </li>
+                            <li class="list-group-item list-group-item-action">
+                                Like Data Science, Mobile Application and Web Development, so making projects in those.
+                            </li>
+                            <li class="list-group-item list-group-item-action">
+                                I like to share my knowledge with others so I have created My Instagram Coding
+                                Page named as "crafty_coding" <a href="https://www.instagram.com/crafty_coding/" target="_parent">Visit Page</a>
+                            </li>
+                            <li class="list-group-item list-group-item-action">
+                                I want to get a Job in Good Company as a Software Developer/ Engineer 😊 or Data Scientist.
+                            </li>
+                            <li class="list-group-item list-group-item-action">
+                                I am currently pursuing my MCA Degree.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5" id="education">
+        <h3 class="mb-3">Education</h3>
+        <table class="table table-hover">
+            <thead class="table-primary">
+                <tr>
+                    <th>School/ College Name</th>
+                    <th>Course/ Study</th>
+                    <th>Year</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>D.Y. Patil International University, Akurdi, Pune</td>
+                    <td>Master of Computer Applications (MCA)</td>
+                    <td>2021 - 2023</td>
+                    <td>To be added</td>
+                </tr>
+                <tr>
+                    <td>D.Y. Patil International University, Akurdi, Pune</td>
+                    <td>Bachelor of Computer Applications (BCA)</td>
+                    <td>2018 - 2021</td>
+                    <td>Percentage: 94.9 %</td>
+                </tr>
+                <tr>
+                    <td>The New Millenium English Medium School and Jr. College, Pune</td>
+                    <td>12<sup>th</sup> HSC (State Board)</td>
+                    <td>2017 - 2018</td>
+                    <td>Percentage: 68.00 %</td>
+                </tr>
+                <tr>
+                    <td>The New Millenium English Medium School and Jr. College, Pune</td>
+                    <td>10<sup>th</sup> SSC (State Board)</td>
+                    <td>2015 - 2016</td>
+                    <td>Percentage: 80.80 %</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container mt-5" id="certifications">
+        <h3 class="mb-3">Certifications</h3>
+        <table class="table">
+            <thead class="table-primary">
+                <tr>
+                    <th>Certification Name</th>
+                    <th>Achieved On</th>
+                    <th>Certificate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MTA - Introduction to Programming using Python</td>
+                    <td>September 16, 2019</td>
+                    <td>
+                        <a href="./resources/Introduction to Programming using Python.png" target="_parent">
+                            View Certificate
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MTA - Introduction to Programming using JavaScript</td>
+                    <td>June 04, 2021</td>
+                    <td>
+                        <a href="./resources/Introduction to Programming using JavaScript.png" target="_parent">
+                            View Certificate
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Python Basics - Free Certification by Kaggle</td>
+                    <td>November 01, 2021</td>
+                    <td>
+                        <a href="./resources/Python Basics.png" target="_parent">
+                            View Certificate
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container mt-5" id="social-media">
+        <h3 class="mb-3">Social Profiles</h3>
+
+        <a href="mailto:prashantagheda2601@gmail.com" target="_parent" class="btn btn-link">
+            <i class="bi bi-envelope-fill"></i>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/prashant-agheda/" target="_parent" class="btn btn-link">
+            <i class="bi bi-linkedin"></i>
+        </a>
+
+        <a href="https://www.instagram.com/crafty_coding/" target="_parent" class="btn btn-link">
+            <i class="bi bi-instagram"></i>
+        </a>
+
+        <a href="https://github.com/prashant-agheda" target="_parent" class="btn btn-link">
+            <i class="bi bi-github"></i>
+        </a>
+    </div>
+
+    <div class="container my-5">
+        <hr/>
+        <p class="small">
+            Created with <span style="color: red; font-size: 16px;">❤</span> and Bootstrap by Prashant Agheda 😊
+        </p>
+        <a href="#home" type="button" class="btn btn-sm btn-outline-dark mt-2 mb-2">
+            Back to Top
+        </a>
+    </div>
+
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+
+    <!-- Custom JavaScript -->
+    <script>
+
+        // Code to Disable Right Click on Webpage
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+    </script>
+  </body>
+</html>
