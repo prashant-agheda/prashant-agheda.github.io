@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f2eee8" />
+<title>Prashant Agheda - Software Developer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap');
+:root{--ink:#191919;--muted:#77736e;--paper:#f2eee8;--line:#e7e1d9;--accent:#fa765c;--lav:#dcd5ff;--green:#cde5d5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E")}
+.shell{max-width:1440px;margin:auto;padding:20px 4vw;min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(560px,760px);gap:clamp(28px,4vw,64px);align-items:center}
+.intro{max-width:520px;position:relative;z-index:1}.eyebrow,.mono{font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.12em;font-size:10px;color:var(--muted)}
+.availability{display:inline-flex;align-items:center;gap:9px;border:1px solid #ded8cf;border-radius:99px;padding:9px 13px;margin-bottom:34px;font-size:11px;color:#555}
+.dot{width:7px;height:7px;border-radius:50%;background:#6da77d;box-shadow:0 0 0 4px #6da77d20}
+h1{font:800 clamp(48px,6vw,82px)/.98 'Manrope',sans-serif;letter-spacing:-.075em;margin:0 0 22px}
+h1 span{color:var(--accent)}.lead{font-size:17px;line-height:1.65;color:#5d5954;max-width:460px;margin:0 0 28px}
+.meta{display:flex;gap:18px;flex-wrap:wrap;color:#706b65;font-size:12px;margin-bottom:36px}.meta span{display:flex;align-items:center;gap:6px}
+.instruction{display:flex;align-items:center;gap:12px;font-size:12px;color:#77716b}.instruction b{font-weight:600;color:#282624}
+.phone-wrap{display:flex;justify-content:center;align-items:center;position:relative;z-index:1}
+.phone{width:100%;height:min(520px, calc(100svh - 40px));aspect-ratio:760 / 520;max-width:100%;border:9px solid #202020;border-radius:38px;background:#121212;padding:7px;box-shadow:0 35px 75px #29231d35,0 8px 20px #29231d20;position:relative;transform:rotate(1.2deg);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.phone:hover{transform:rotate(0) translateY(-5px)}.screen{height:100%;border-radius:29px;overflow:hidden;position:relative;background:#f7f3ed}
+.island{position:absolute;z-index:5;top:8px;left:50%;transform:translateX(-50%);width:86px;height:19px;border-radius:30px;background:#161616}
+.status{position:absolute;top:12px;left:19px;right:19px;z-index:4;display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:#fff}
+.wallpaper{position:absolute;inset:0;background:radial-gradient(circle at 20% 23%,#ffd5c9 0 13%,transparent 33%),radial-gradient(circle at 90% 45%,#cfc5ff 0 15%,transparent 37%),linear-gradient(145deg,#f5bba9,#e9d8ca 50%,#c6c0eb)}
+.wallpaper:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#201b1b12,transparent 36%,#211c1c22)}
+.lock-content{position:absolute;inset:0;z-index:2;color:white;text-align:center;padding:100px 22px 25px;display:flex;flex-direction:column;align-items:center}
+.lock-date{font-size:12px;letter-spacing:.05em;text-shadow:0 1px 6px #5555}.lock-time{font:500 72px/.98 'Manrope';letter-spacing:-.08em;margin:8px 0 0;text-shadow:0 2px 10px #5553}
+.lock-name{margin-top:auto;margin-bottom:22px;font:700 22px 'Manrope';letter-spacing:-.05em;text-shadow:0 1px 8px #5555}
+.unlock{border:1px solid #ffffff9c;background:#ffffff35;color:#fff;border-radius:99px;padding:12px 22px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(12px);cursor:pointer;transition:.2s}
+.unlock:hover{background:#fff;color:#282323}.swipe{font-size:10px;opacity:.85;margin-top:13px}
+.home{position:absolute;inset:0;z-index:3;display:none;padding:38px 28px 18px;background:linear-gradient(155deg,#f8eee7,#eee9fa 65%,#e9e5dd);animation:appear .45s ease}
+.home.show{display:grid;grid-template-columns:minmax(210px,.78fr) minmax(0,1.45fr);grid-template-rows:auto 1fr auto auto;column-gap:30px;row-gap:12px}@keyframes appear{from{opacity:0;transform:scale(1.035)}to{opacity:1;transform:scale(1)}}
+.home-top{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin-bottom:2px}.home-top .mono{font-size:8px;color:#6f6966}.home-top strong{font-size:12px}
+.widget{grid-column:1;grid-row:2;border-radius:22px;padding:22px 23px;background:#ffffffa8;border:1px solid #ffffffd9;box-shadow:0 7px 20px #594a3a0c;margin-bottom:19px;backdrop-filter:blur(8px)}
+.widget .small{font-size:11px;color:#777}.widget h2{font:700 29px 'Manrope';letter-spacing:-.06em;margin:5px 0}.widget p{font-size:13px;line-height:1.55;color:#69625d;margin:0}
+.apps{grid-column:2;grid-row:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-content:center;gap:24px 14px}
+.app{border:0;background:transparent;padding:0;display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;color:#24211f;font:600 12px 'DM Sans';min-width:0}
+.app-icon{width:62px;height:62px;border-radius:17px;display:grid;place-items:center;font-size:24px;box-shadow:0 5px 12px #473b3318;transition:transform .2s}
+.app:hover .app-icon{transform:translateY(-4px) scale(1.04)}.i-about{background:#f8c9b9}.i-work{background:#d9d1ff}.i-exp{background:#cce5d4}.i-stack{background:#f5df9d}.i-edu{background:#d5e3f7}.i-contact{background:#f2c7d8}.i-git{background:#d9d6d0}.i-resume{background:#e5d7c6}
+.dock{grid-column:1/-1;grid-row:3;justify-self:center;width:min(420px,80%);margin-top:0;border-radius:24px;padding:9px;background:#ffffff8c;display:flex;justify-content:space-around;backdrop-filter:blur(10px);border:1px solid #fff}
+.dock .app-icon{width:44px;height:44px;border-radius:15px}
+.home-hint{grid-column:1/-1;grid-row:4;text-align:center;font-size:9px;line-height:1.35;color:#77716c;margin-top:0}
+.home-indicator{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:95px;height:4px;background:#25211f;border-radius:9px;z-index:8}
+.panel{position:absolute;inset:0;z-index:7;background:#faf8f4;display:none;flex-direction:column;animation:slide .28s ease}
+.panel.open{display:flex}@keyframes slide{from{transform:translateY(18px);opacity:.5}to{transform:translateY(0);opacity:1}}
+.panel-head{height:62px;display:flex;align-items:center;justify-content:space-between;padding:17px 17px 8px;border-bottom:1px solid #eee9e2;flex-shrink:0}
+.back{border:0;background:#f0ece6;border-radius:50%;width:31px;height:31px;font-size:18px;cursor:pointer}.panel-head .mono{font-size:9px}
+.panel-body{padding:19px 18px 35px;overflow:auto;flex:1}.panel-body h2{font:800 29px/1.05 'Manrope';letter-spacing:-.07em;margin:5px 0 12px}.panel-body p{font-size:11px;line-height:1.65;color:#69645e}
+.tag{display:inline-block;padding:6px 9px;border:1px solid #e8e2da;border-radius:30px;font-size:9px;margin:3px 3px 3px 0;color:#625c55}
+.card{border:1px solid #e9e3dc;border-radius:15px;padding:13px;margin:12px 0;background:#fff}.card h3{font:700 14px 'Manrope';letter-spacing:-.03em;margin:0 0 5px}.card .sub{font:9px 'DM Mono';color:#9a7569;text-transform:uppercase;letter-spacing:.06em}.card p{margin:7px 0 0;font-size:10px}
+.metric{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}.metric div{background:#f1ede7;border-radius:12px;padding:12px}.metric strong{display:block;font:700 21px 'Manrope';letter-spacing:-.05em}.metric span{font-size:9px;color:#777}
+.action{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;background:#252321;padding:11px 14px;border-radius:99px;font-size:10px;margin:5px 5px 5px 0}
+.action.light{background:#f0ece6;color:#282522}.link{color:#b85c4b;text-decoration:none;font-size:10px}
+.timeline{border-left:1px solid #e1d9d0;margin:14px 0 0 5px;padding-left:15px}.timeline .card{position:relative}.timeline .card:before{content:"";position:absolute;left:-20px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--accent);border:2px solid #faf8f4}
+footer{position:absolute;bottom:13px;left:0;right:0;text-align:center;font-size:8px;color:#9b948b;z-index:1}
+@media(max-width:850px){.shell{grid-template-columns:1fr;gap:35px;padding:35px 20px 45px;min-height:auto}.intro{max-width:560px;margin:auto;text-align:center}.availability{margin-bottom:24px}.lead{margin-left:auto;margin-right:auto}.meta{justify-content:center;margin-bottom:25px}.instruction{justify-content:center}.phone{height:auto;aspect-ratio:760 / 520;min-height:380px;transform:none}.phone:hover{transform:translateY(-3px)}}
+@media(max-width:520px){.phone{min-height:460px;aspect-ratio:1.15 / 1}.home{padding:35px 14px 16px;grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto auto;gap:10px}.home-top{grid-column:1;grid-row:1}.widget{grid-column:1;grid-row:2;padding:13px 15px}.widget h2{font-size:22px}.widget p{font-size:11px}.apps{grid-column:1;grid-row:3;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px 4px}.app-icon{width:48px;height:48px;font-size:22px}.app{font-size:10px;gap:5px}.dock{grid-column:1;grid-row:4;width:90%;padding:6px}.dock .app-icon{width:38px;height:38px}.home-hint{grid-column:1;grid-row:5;font-size:8px}}
+@media(max-width:390px){.phone{width:100%;height:auto;max-width:calc(100vw - 24px)}.shell{padding-left:12px;padding-right:12px}h1{font-size:52px}}
+@media(max-height:650px) and (min-width:851px){.shell{padding-top:10px;padding-bottom:10px}.phone{height:calc(100svh - 20px);aspect-ratio:760 / 520}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Viewport-fit responsive layout: desktop is one-screen; small screens stack naturally */
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;overflow-x:hidden}
+.shell{
+  width:100%;
+  height:100svh;
+  min-height:0;
+  max-width:1600px;
+  margin:0 auto;
+  padding:clamp(18px,3vh,34px) clamp(22px,4vw,64px);
+  grid-template-columns:minmax(290px,.82fr) minmax(0,1.18fr);
+  gap:clamp(24px,3.5vw,58px);
+  align-items:center;
+  overflow:hidden;
+}
+.intro{max-width:560px;min-width:0}
+h1{font-size:clamp(48px,5.3vw,78px);margin-bottom:clamp(12px,2vh,22px)}
+.availability{margin-bottom:clamp(14px,2.5vh,28px)}
+.lead{font-size:clamp(15px,1.25vw,18px);line-height:1.52;margin-bottom:clamp(14px,2.3vh,26px)}
+.meta{gap:10px 16px;margin-bottom:clamp(14px,2.5vh,28px)}
+.phone{
+  width:min(100%,calc((100svh - 72px)*1.46));
+  height:auto;
+  aspect-ratio:760 / 520;
+  max-height:calc(100svh - 72px);
+  justify-self:center;
+  transform:none;
+}
+.phone:hover{transform:translateY(-2px)}
+/* Tablet interior scales with the device rather than overflowing it */
+.home{padding:clamp(24px,3.5vw,38px) clamp(18px,2.5vw,28px) 16px}
+.home.show{column-gap:clamp(16px,2vw,30px);row-gap:10px}
+.widget{padding:clamp(13px,1.6vw,22px)}
+.widget h2{font-size:clamp(20px,2vw,29px)}
+.widget p{font-size:clamp(10px,.95vw,13px)}
+.app-icon{width:clamp(42px,4.1vw,62px);height:clamp(42px,4.1vw,62px);font-size:clamp(20px,1.8vw,27px)}
+.app{font-size:clamp(9px,.85vw,12px)}
+.dock .app-icon{width:clamp(36px,3vw,44px);height:clamp(36px,3vw,44px)}
+.home-hint{font-size:clamp(8px,.7vw,9px)}
+@media(max-width:1000px) and (min-width:851px){
+  .shell{grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr);gap:22px;padding-left:24px;padding-right:24px}
+  h1{font-size:clamp(46px,5vw,64px)}
+  .phone{width:100%;max-height:70svh}
+}
+@media(max-width:850px){
+  html,body{overflow-x:hidden}
+  .shell{
+    height:auto;min-height:100svh;overflow:visible;
+    grid-template-columns:minmax(0,1fr);
+    gap:26px;padding:28px 20px 32px;
+  }
+  .intro{max-width:620px;margin:0 auto;text-align:center}
+  h1{font-size:clamp(48px,10vw,72px)}
+  .lead{font-size:clamp(15px,3.5vw,18px);margin-left:auto;margin-right:auto}
+  .meta{justify-content:center}
+  .instruction{justify-content:center}
+  .phone{width:min(100%,760px);height:auto;max-height:none;aspect-ratio:760 / 520;min-height:0}
+  .home{padding:35px 20px 16px}
+}
+@media(max-width:560px){
+  .shell{padding:24px 14px 28px;gap:22px}
+  .availability{font-size:9px;padding:8px 11px;margin-bottom:18px}
+  h1{font-size:clamp(43px,11vw,58px);line-height:.98}
+  .lead{font-size:14px;line-height:1.5}
+  .meta{font-size:10px;gap:8px 12px}
+  .phone{aspect-ratio:1.12 / 1;border-width:7px;border-radius:29px;padding:5px}
+  .screen{border-radius:22px}
+  .home{padding:34px 12px 13px;grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto auto;gap:9px}
+  .home-top{grid-column:1;grid-row:1;font-size:10px}
+  .widget{grid-column:1;grid-row:2;padding:12px 14px}
+  .widget h2{font-size:21px}
+  .widget p{font-size:10px}
+  .apps{grid-column:1;grid-row:3;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 4px}
+  .app-icon{width:clamp(38px,11vw,48px);height:clamp(38px,11vw,48px);font-size:21px}
+  .app{font-size:9px;gap:5px}
+  .dock{grid-column:1;grid-row:4;width:90%;padding:6px}
+  .dock .app-icon{width:34px;height:34px}
+  .home-hint{grid-column:1;grid-row:5;font-size:7px}
+}
+@media(max-height:720px) and (min-width:851px){
+  .shell{padding-top:12px;padding-bottom:12px}
+  .phone{width:min(100%,calc((100svh - 36px)*1.46));max-height:calc(100svh - 36px)}
+  .availability{margin-bottom:12px}
+  h1{font-size:clamp(42px,4.8vw,66px);margin-bottom:10px}
+  .lead{font-size:15px;line-height:1.4;margin-bottom:12px}
+  .meta{margin-bottom:12px}
+}
+
+
+/* Final polish: readable intro rhythm and responsive tablet placement */
+.intro{max-width:590px}
+.availability{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.01em;padding:10px 15px;margin-bottom:clamp(22px,3vh,34px)}
+.eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.15em;margin-bottom:10px}
+h1{font-family:'Manrope',sans-serif;font-size:clamp(52px,5.2vw,78px);line-height:1.02;letter-spacing:-.065em;margin:0 0 24px}
+.lead{font-family:'DM Sans',sans-serif;font-size:clamp(17px,1.35vw,19px);line-height:1.72;letter-spacing:.005em;color:#56514c;max-width:540px;margin:0 0 30px}
+.meta{display:flex;gap:12px 22px;flex-wrap:wrap;color:#625d57;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6;margin:0 0 26px}
+.meta span{display:inline-flex;align-items:center;gap:8px;white-space:normal}
+.instruction{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6;gap:13px;color:#6c665f}
+.instruction b{font-weight:700}
+@media(max-width:1100px){
+ .shell{height:auto;min-height:100svh;overflow:visible;grid-template-columns:minmax(0,1fr);gap:34px;padding:34px clamp(20px,5vw,56px) 42px}
+ .intro{max-width:720px;margin:0 auto;text-align:center}
+ .lead{margin-left:auto;margin-right:auto;max-width:650px}
+ .meta{justify-content:center}
+ .instruction{justify-content:center}
+ .phone-wrap{width:100%;min-width:0}
+ .phone{width:min(100%,900px);height:auto;max-height:none;aspect-ratio:760/520;min-width:0}
+}
+@media(max-width:600px){
+ .shell{padding:25px 16px 30px;gap:25px}
+ .availability{font-size:10px;margin-bottom:19px}
+ .eyebrow{font-size:9px}
+ h1{font-size:clamp(44px,11vw,58px);margin-bottom:18px}
+ .lead{font-size:15px;line-height:1.65;margin-bottom:22px}
+ .meta{font-size:12px;gap:8px 14px;margin-bottom:20px}
+ .instruction{font-size:12px}
+ .phone{aspect-ratio:1.12/1;border-width:7px;border-radius:29px;padding:5px}
+ .screen{border-radius:22px}
+}
+
+
+/* Subtle, continuously drifting gradient for a calmer, more polished feel */
+.wallpaper{
+  background:
+    radial-gradient(ellipse at 18% 24%,#ffd5c9 0 12%,transparent 36%),
+    radial-gradient(ellipse at 84% 38%,#cfc5ff 0 16%,transparent 40%),
+    radial-gradient(ellipse at 48% 92%,#c5e7d6 0 8%,transparent 34%),
+    linear-gradient(135deg,#f5bba9,#e9d8ca 48%,#c6c0eb);
+  background-size:145% 145%,155% 155%,150% 150%,220% 220%;
+  animation:wallpaperDrift 24s ease-in-out infinite alternate;
+  will-change:background-position;
+}
+.wallpaper:after{
+  background:linear-gradient(180deg,#201b1b12,transparent 36%,#211c1c22);
+}
+body{background:linear-gradient(115deg,#f4f0e9,#e8f1ef,#f2eaf3,#f4f0e9);background-size:260% 260%;animation:pageGradientDrift 38s ease-in-out infinite}
+@keyframes wallpaperDrift{
+  0%{background-position:0% 0%,100% 10%,40% 100%,0% 50%}
+  50%{background-position:35% 25%,65% 45%,70% 55%,55% 45%}
+  100%{background-position:100% 70%,0% 90%,20% 0%,100% 50%}
+}
+@keyframes pageGradientDrift{
+  0%{background-position:0% 45%}
+  50%{background-position:100% 55%}
+  100%{background-position:0% 45%}
+}
+@media(prefers-reduced-motion:reduce){
+  .wallpaper,body{animation:none!important}
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+
+.material-symbols-rounded{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:1em;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;font-feature-settings:'liga';-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 450,'GRAD' 0,'opsz' 28}
+.app-icon .material-symbols-rounded{font-size:27px}
+.dock .app-icon .material-symbols-rounded{font-size:23px}
+@media(max-width:600px){.app-icon .material-symbols-rounded{font-size:23px}.dock .app-icon .material-symbols-rounded{font-size:20px}}
+
+/* Mobile repair: give the device enough height for every home-screen row */
+@media (max-width: 600px) {
+  .shell {
+    width: 100%;
+    min-height: 100svh;
+    height: auto;
+    padding: 22px 12px 30px;
+    gap: 22px;
+    overflow: visible;
+  }
+  .intro, .phone-wrap { width: 100%; min-width: 0; }
+  .phone {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: 0.82 / 1;
+    border-width: 7px;
+    border-radius: 28px;
+    padding: 5px;
+    transform: none;
+  }
+  .phone:hover { transform: none; }
+  .screen { width: 100%; height: 100%; border-radius: 21px; }
+  .home {
+    padding: 34px 12px 13px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+    gap: 9px;
+  }
+  .home-top { grid-column: 1; grid-row: 1; min-width: 0; }
+  .widget { grid-column: 1; grid-row: 2; min-width: 0; }
+  .apps {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-content: center;
+    justify-items: center;
+    gap: 12px 4px;
+  }
+  .app { min-width: 0; width: 100%; }
+  .app-icon {
+    width: clamp(38px, 11vw, 46px);
+    height: clamp(38px, 11vw, 46px);
+  }
+  .dock { grid-column: 1; grid-row: 4; width: min(94%, 360px); }
+  .home-hint { grid-column: 1; grid-row: 5; }
+}
+@media (max-width: 360px) {
+  .shell { padding-left: 10px; padding-right: 10px; }
+  .phone { aspect-ratio: 0.78 / 1; }
+  .home { padding-left: 9px; padding-right: 9px; }
+  .widget { padding: 11px 12px; }
+  .widget h2 { font-size: 19px; }
+  .app { font-size: 8px; }
+}
+
+
+/* Responsive alignment: center the app grid and content cards */
+@media (max-width: 600px) {
+  .home.show {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .apps {
+    width: min(100%, 360px);
+    margin-inline: auto;
+    justify-items: center;
+  }
+  .app {
+    justify-self: center;
+    text-align: center;
+  }
+  .panel-body {
+    width: 100%;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+  .panel-body > .card,
+  .panel-body > a.card {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 601px) and (max-width: 1100px) {
+  .apps {
+    justify-items: center;
+  }
+  .panel-body {
+    width: 100%;
+    max-width: 680px;
+    margin-inline: auto;
+  }
+}
+
+</style>
+</head>
+<body>
+<main class="shell">
+  <section class="intro">
+    <div class="availability"><span class="dot"></span> EXPLORING FULL-STACK DEVELOPMENT ROLES</div>
+    <div class="eyebrow">A little different kind of portfolio</div>
+    <h1>Hey, I'm<br>Prashant<span>.</span></h1>
+    <p class="lead">I build reliable digital experiences across backend, frontend and AI-enabled applications. With a strong foundation in Java and Spring Boot, I’m exploring full-stack development opportunities where I can contribute across the stack and keep building what’s next.</p>
+    <div class="meta"><span>✳ 3+ years experience</span><span>✳ Credit cards & payments domain</span><span>✳ Full-stack development</span></div>
+    <div class="instruction"><span>#</span><span><b>Explore my phone</b> - tap an app to get to know me.</span></div>
+  </section>
+
+  <section class="phone-wrap" aria-label="Interactive smartphone portfolio">
+    <div class="phone">
+      <div class="screen">
+        <div class="wallpaper"></div>
+        <div class="island"></div>
+        <div class="status"><span id="statusClock">--:--</span><span>●●●  ▰</span></div>
+        <div class="lock-content" id="lock">
+          <div class="lock-date" id="date">SATURDAY, NOVEMBER 14</div>
+          <div class="lock-time" id="clock">9:41</div>
+          <div class="lock-name">Prashant Agheda</div>
+          <button class="unlock" id="unlock"><b>Tap to explore ↗</b></button>
+          <div class="swipe">A portfolio in your pocket</div>
+        </div>
+        <div class="home" id="home">
+          <div class="home-top"><span class="mono">MY DIGITAL SPACE</span><strong>✦ Prashant Agheda</strong></div>
+          <div class="widget"><div class="small">HELLO THERE 👋</div><h2>Welcome in.</h2><p>Curious about what I build? Start anywhere.</p></div>
+          <div class="apps">
+            <button class="app" data-panel="about"><span class="app-icon i-about"><span class="material-symbols-rounded" aria-hidden="true">person</span></span>About me</button>
+            <button class="app" data-panel="work"><span class="app-icon i-work"><span class="material-symbols-rounded" aria-hidden="true">grid_view</span></span>Projects</button>
+            <button class="app" data-panel="experience"><span class="app-icon i-exp"><span class="material-symbols-rounded" aria-hidden="true">work_history</span></span>Experience</button>
+            <button class="app" data-panel="stack"><span class="app-icon i-stack"><span class="material-symbols-rounded" aria-hidden="true">code</span></span>Tech stack</button>
+            <button class="app" data-panel="education"><span class="app-icon i-edu"><span class="material-symbols-rounded" aria-hidden="true">school</span></span>Education</button>
+            <button class="app" data-panel="contact"><span class="app-icon i-contact"><span class="material-symbols-rounded" aria-hidden="true">mail</span></span>Contact</button>
+            <button class="app" data-panel="github"><span class="app-icon i-git"><span class="material-symbols-rounded" aria-hidden="true">link</span></span>Elsewhere</button>
+            <button class="app" data-panel="resume"><span class="app-icon i-resume"><span class="material-symbols-rounded" aria-hidden="true">description</span></span>Resume</button>
+          </div>
+          <div class="dock">
+            <button class="app" data-panel="contact"><span class="app-icon i-contact"><span class="material-symbols-rounded" aria-hidden="true">mail</span></span></button>
+            <button class="app" data-panel="work"><span class="app-icon i-work"><span class="material-symbols-rounded" aria-hidden="true">grid_view</span></span></button>
+            <button class="app" data-panel="stack"><span class="app-icon i-stack"><span class="material-symbols-rounded" aria-hidden="true">code</span></span></button>
+            <button class="app" data-panel="resume"><span class="app-icon i-resume"><span class="material-symbols-rounded" aria-hidden="true">description</span></span></button>
+          </div>
+          <div class="home-hint">Tap an icon to open · tap the back arrow to return</div>
+        </div>
+        <section class="panel" id="panel">
+          <div class="panel-head"><button class="back" id="back" aria-label="Back to home">‹</button><span class="mono" id="panel-label">ABOUT</span><span style="font-size:13px">✦</span></div>
+          <div class="panel-body" id="panel-body"></div>
+        </section>
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+const content={
+about:`<div class="mono">01 / A QUICK INTRO</div><h2>Developer by craft. Curious by default.</h2><p>I'm Prashant, a Software Developer based in Pune, India. I work across backend and frontend, building production-grade applications in the Credit Card & Payments domain.</p><p>I enjoy solving practical engineering problems, shaping clean REST APIs, improving database performance and finding thoughtful ways to use AI in everyday development.</p><div class="metric"><div><strong>3+</strong><span>Years building software</span></div><div><strong>10+</strong><span>Features delivered</span></div></div><span class="tag">Problem solving</span><span class="tag">Clean code</span><span class="tag">Team collaboration</span><span class="tag">Continuous learning</span>`,
+work:`<div class="mono">02 / SELECTED PROJECTS</div><h2>Things I've built.</h2><p>A selection of applications and experiments - open each live project to explore it.</p><div class="card"><div class="sub">FULL-STACK · HEALTH</div><h3>CureMe - Health Advice App</h3><p>A platform that helps people book appointments with doctors, chat with them and read health blogs written by physicians.</p><span class="tag">Spring Boot</span><span class="tag">React JS</span><span class="tag">MySQL</span><span class="tag">REST API</span><a class="action light" href="https://cureme-health-advice-app.web.app/" target="_blank" rel="noopener noreferrer">View live project ↗</a></div><div class="card"><div class="sub">COMMUNITY · WEB APPLICATION</div><h3>Covid Relief Website</h3><p>A useful community-focused website created around the Covid-19 situation. The data shown is imaginary, while the idea and purpose are real.</p><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><a class="action light" href="https://my-covid-relief-website.web.app/" target="_blank" rel="noopener noreferrer">View live project ↗</a></div><div class="card"><div class="sub">UI TOOL · MINI PROJECT</div><h3>UI Color Picker</h3><p>A color selection tool for UI projects. Choose a color and preview the changes on the device mock-up.</p><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><a class="action light" href="https://ui-color-picker-tool.web.app/" target="_blank" rel="noopener noreferrer">View live project ↗</a></div><div class="card"><div class="sub">API INTEGRATION · HACKATHON</div><h3>GIF Finder</h3><p>A simple website that helps users find GIFs based on the keyword they enter.</p><span class="tag">JavaScript</span><span class="tag">Giphy API</span><span class="tag">API Integration</span><a class="action light" href="https://gif-finder-free.web.app/" target="_blank" rel="noopener noreferrer">View live project ↗</a></div><div class="card"><div class="sub">SEARCH · API INTEGRATION</div><h3>Wikipedia Search</h3><p>A keyword-based search tool that finds relevant information and links from Wikipedia - for example, searching for Artificial Intelligence.</p><span class="tag">JavaScript</span><span class="tag">Wikipedia API</span><span class="tag">Search</span><a class="action light" href="https://easy-wikipedia-search.web.app/" target="_blank" rel="noopener noreferrer">View live project ↗</a></div><div class="card"><div class="sub">INTERACTIVE CANVAS · PRODUCTIVITY</div><h3>Simple Whiteboard</h3><p>A brainstorming canvas where users can draw, adjust pen and eraser sizes, and download their board.</p><span class="tag">HTML Canvas</span><span class="tag">JavaScript</span><span class="tag">Interactive UI</span><a class="action light" href="https://whiteboard-your-ideas.web.app/" target="_blank" rel="noopener noreferrer">View live project ↗</a></div><div class="card"><div class="sub">AI / NLP</div><h3>SentenceGen - AI Sentence Generator</h3><p>Uses Google's T5 transformer through Hugging Face to generate context-aware sentences from user keywords. Includes model inference and prompt engineering.</p><span class="tag">Python</span><span class="tag">Google T5</span><span class="tag">Hugging Face</span></div><div class="card"><div class="sub">WEB APPLICATION</div><h3>Flight Ticket Booking</h3><p>An end-to-end booking experience with dynamic fares, seat selection and booking confirmation workflows.</p><span class="tag">PHP</span><span class="tag">CodeIgniter 3</span><span class="tag">MySQL</span></div>`,
+experience:`<div class="mono">03 / WHERE I'VE WORKED</div><h2>Experience that ships.</h2><div class="timeline"><div class="card"><div class="sub">JUL 2023 - PRESENT · PUNE</div><h3>App Backend Engineer - L2</h3><p><b>Bitwise Solutions Pvt. Ltd.</b></p><p>Building and maintaining payment-processing features for a major Indian credit card client on a platform processing millions of transactions monthly.</p><p>Delivered 10+ features, optimized SQL performance by up to 25%, contributed to GCP/AWS infrastructure and CI/CD, and supported code quality through reviews and Git practices.</p><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">React</span><span class="tag">GCP / AWS</span></div><div class="card"><div class="sub">MAR 2023 - JUN 2023 · PUNE</div><h3>Software Development Intern</h3><p><b>Britwise Technologies Pvt. Ltd.</b></p><p>Built a flight booking website and a tourism web application, delivering two production-ready projects independently within four months.</p><span class="tag">PHP</span><span class="tag">CodeIgniter</span><span class="tag">AJAX</span><span class="tag">jQuery</span></div><div class="card"><div class="sub">JUL 2020 - OCT 2020 · PUNE</div><h3>Software Development Intern</h3><p><b>VibrantMinds Technologies Pvt. Ltd.</b></p><p>Led a sub-team for website design and development, coordinating tasks and delivery of assigned modules.</p></div></div>`,
+stack:`<div class="mono">04 / SKILLS</div><h2>SKILLS</h2><div class="card"><h3>Backend</h3><p>Java, Spring Boot, REST APIs, Microservices, SQL, MySQL, PostgreSQL, SQL Server</p></div><div class="card"><h3>Testing & Quality</h3><p>JUnit, Unit Testing, Postman, Code Reviews, Production Support, Root-Cause Analysis</p></div><div class="card"><h3>Cloud & DevOps</h3><p>GCP, AWS, Git, GitHub, Harness, CI/CD</p></div><div class="card"><h3>Frontend</h3><p>React JS, JavaScript, HTML, CSS</p></div><div class="card"><h3>Engineering Practices</h3><p>OOP, SDLC, Agile/Scrum, Waterfall</p></div><div class="card"><h3>AI Tools</h3><p>GitHub Copilot, Claude Code, ChatGPT, Gemini, Prompt Engineering</p></div><div class="card"><h3>Tools</h3><p>Eclipse, IntelliJ IDEA, VS Code, Jira, Rally</p></div>`,
+education:`<div class="mono">05 / THE LEARNING YEARS</div><h2>Built on a strong foundation.</h2><div class="card"><div class="sub">2021 - 2023</div><h3>Master of Computer Applications</h3><p>D.Y. Patil International University, Pune</p><strong>96.13%</strong></div><div class="card"><div class="sub">2018 - 2021</div><h3>Bachelor of Computer Applications</h3><p>D.Y. Patil International University, Pune</p><strong>94.9%</strong></div><div class="card"><h3>Certifications</h3><p>Introduction to Programming using JavaScript - Microsoft (2021)</p><p>Introduction to Programming using Python - Microsoft (2019)</p><p>Python Basics - Kaggle (2021)</p></div>`,
+contact:`<div class="mono">06 / LET'S CONNECT</div><h2>Have something<br>interesting in mind?</h2><p>I'm always happy to connect about software engineering, product ideas, learning and opportunities.</p><div class="card"><div class="sub">EMAIL</div><h3>prashantagheda26@gmail.com</h3><a class="action" href="mailto:prashantagheda26@gmail.com">Send an email ↗</a></div><div class="card"><div class="sub">PHONE</div><h3>+91 99226 81295</h3><a class="action light" href="tel:+919922681295">Call me ↗</a></div><p class="mono">BASED IN PUNE, MAHARASHTRA, INDIA</p>`,
+github:`<div class="mono">07 / AROUND THE WEB</div><h2>Find me elsewhere.</h2><p>Connect with me, explore my code, read my writing or visit my personal website.</p><a class="card" href="https://www.linkedin.com/in/prashant-agheda/" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:inherit"><h3>LinkedIn ↗</h3><p>Professional updates and connections</p><span class="link">linkedin.com/in/prashant-agheda</span></a><a class="card" href="https://github.com/prashant-agheda" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:inherit"><h3>GitHub ↗</h3><p>Code, experiments and projects</p><span class="link">github.com/prashant-agheda</span></a><a class="card" href="https://prashantagheda.medium.com/" target="_blank" rel="noopener noreferrer" style="display:block;text-decoration:none;color:inherit"><h3>Medium ↗</h3><p>Articles, notes and ideas</p><span class="link">prashantagheda.medium.com</span></a>`,
+resume:`<div class="mono">08 / THE FULL STORY</div><h2>Prefer the classic format?</h2><p>Open or download my resume for a concise overview of my experience, skills, education and projects.</p><a class="action" href="https://github.com/prashant-agheda/prashant-agheda/blob/main/Prashant_Agheda_Resume.pdf" target="_blank" rel="noopener noreferrer">View resume ↗</a><p class="mono" style="margin-top:18px">PDF · PRASHANT AGHEDA</p>`
+};
+const lock=document.getElementById('lock'),home=document.getElementById('home'),panel=document.getElementById('panel'),body=document.getElementById('panel-body'),label=document.getElementById('panel-label');
+document.getElementById('unlock').addEventListener('click',()=>{lock.style.display='none';home.classList.add('show')});
+function openPanel(key){body.innerHTML=content[key]||'';label.textContent=key.toUpperCase();panel.classList.add('open')}
+document.querySelectorAll('[data-panel]').forEach(b=>b.addEventListener('click',()=>openPanel(b.dataset.panel)));
+document.getElementById('back').addEventListener('click',()=>panel.classList.remove('open'));
+function updateClock(){const d=new Date();const time=d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:false});document.getElementById('clock').textContent=time;document.getElementById('statusClock').textContent=time;document.getElementById('date').textContent=d.toLocaleDateString('en-IN',{weekday:'long',month:'long',day:'numeric'}).toUpperCase()}
+updateClock();setInterval(updateClock,30000);
+</script>
+</body></html>
